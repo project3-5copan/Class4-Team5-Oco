@@ -1,17 +1,31 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node.js",
   "main": "index.js",
-  "dependencies": {
-    "json-server": "^0.16.3"
-  },
-  "devDependencies": {},
+  "author": "raise-project-members",
+  "license": "MIT",
   "scripts": {
-    "starts": "json-server --watch board.json --port 4000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"yarn run server\" \"cd ../client && yarn run start\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.3.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
+    "mongoose": "^6.0.11",
+    "nodemon": "^2.0.14",
+    "path": "^0.12.7"
+  }
 }

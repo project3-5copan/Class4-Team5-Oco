@@ -1,0 +1,175 @@
+/* 헤더 상단바 */
+.navbar {
+  background-color: #fff;
+  width: 100%;
+  height: 60px;
+  padding-top: 5px;
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+}
+/* 드롭다운 내용 */
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background:none;
+}
+/* 헤더 드롭다운 상단바 */
+.navbar-toggle {
+  background-color: #fff;
+  padding-top: 5px;
+  width:100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nav-menu {
+  background-color: #EDE9F6;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left:-100%;
+  transition: 250ms ease;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+.nav-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style:none;
+  height: 60px;
+  font-weight: 600;
+  font-size: 17.5px;
+} 
+.nav-text a {
+  text-decoration: none;
+  color: #000;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding:0 16px;
+  border-radius: 4px;
+} 
+.nav-text a:hover{
+  background-color: #1a83ff;
+  color: #fff;
+}
+.nav-menu-items {
+  width:100%;
+  z-index: 1000;
+} 
+span {
+  margin-left:16px;
+  margin-top: 5px;
+}
+.HeaderBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 글자로고 */
+.Raise {
+  letter-spacing: 1.8px;
+  font-size: 25px;
+  margin-right: 5px;
+}
+/* 글자로고, 웹개발자, 여기로 모이다. */
+.RaiseDescription {
+  position: absolute;
+  right: 0;
+  left: 41.8%;
+  top: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  padding: 0px 24px;
+  font-size: 14px;
+}
+/* 회원가입 버튼 */
+.registbar {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 7px 8px 5px 8px;
+  background-color: #1a83ff;
+  color: #fff;
+}
+.registbar:active {
+  opacity: 0.5;
+}
+/* 로그인 버튼 */
+.loginbar {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 7px 8px 5px 8px;
+  margin-left: 156px;
+  margin-right: 10px;
+}
+.loginbar:active {
+  opacity: 0.5;
+}
+/* 작은 로고 */
+.logo {
+  margin-left: 2px;
+  margin-bottom: 20px;
+}
+/* 로그아웃 */
+.logoutbar {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: 600;
+  width: 90px;
+  padding: 7px 8px 5px 8px;
+  margin-right: 10px;
+}
+.logoutbar:active {
+  opacity: 0.5;
+}
+/* 프로필 크기 */
+.profile {
+  width: 25px;
+  height: 25px;
+}
+/* 비로그인시 : 프로필 이미지 + 로그인 버튼 + 로그아웃 버튼 */
+/* 로그인시 : 프로필 이미지 + 로그아웃 버튼 + ***님 환영합니다 */
+.userView {
+  display: flex;
+  width: 300px;
+  margin: 20px;
+}
+/* 프로필 이미지 + ***님 환영합니다 */
+.profileBox {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  background: none;
+  cursor: pointer;
+  margin-left: 55px;
+}
+/* ***님 환영합니다 */
+.userName {
+  font-size: 15px;
+  font-weight: 600;
+  padding-top: 4px;
+  padding-left: 5px;
+  width: 145px;
+  border: none;
+  cursor: pointer;
+}
