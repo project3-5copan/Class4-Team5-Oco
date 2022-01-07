@@ -162,7 +162,7 @@ function RegisterPage(props) {
               required: true,
               minLength: true,
               minLength: 2,
-              maxLength: 4,
+              maxLength: 8,
             })}
           />
           {errors.name && (
@@ -174,8 +174,9 @@ function RegisterPage(props) {
           <FilledInput
             id="github"
             name="github"
-            placeholder="ex) https://github.com/ragnarok-forU"
+            placeholder="ex) https://github.com/project3-5copan/Class4-Team5-Oco"
             {...register('github', {
+              required: true,
               pattern:
                 /(http(s)?:\/\/|www.)([a-z0-9\w]+\.*)+[a-z0-9]{2,4}/gi ||
                 /(http(s)?:\/\/|www.)([a-z0-9\w]+\.*)+[a-z0-9]{2,4}([\\/a-z0-9-%#?&=\w])+(\.[a-z0-9]{2,4}(\?[\\/a-z0-9-%#?&=\w]+)*)*/gi,

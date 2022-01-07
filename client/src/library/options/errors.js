@@ -25,7 +25,7 @@ export const PasswordConfirmError = {
 export const NameError = {
   required: '이름을 입력해주세요.',
   minLength: '이름을 2글자 이상 입력해주세요.',
-  maxLength: '이름을 4글자 이내로 작성해주세요.',
+  maxLength: '이름을 8글자 이내로 작성해주세요.',
 };
 
 // 자기소개
@@ -36,5 +36,6 @@ export const DescriptionError = {
 
 // github URL
 export const UrlError = {
-  pattern: 'url 형식이 올바르지 않습니다.',
+  required: 'URL을 입력해주세요.',
+  pattern: 'URL 형식이 올바르지 않습니다.',
 };
