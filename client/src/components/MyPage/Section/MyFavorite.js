@@ -5,7 +5,7 @@ import { likeList } from 'modules/actions/like';
 import MyLikeBoard from 'components/Board/Section/Like/MyLikeBoard';
 import styled from 'styled-components';
 
-function myFavorite() {
+function MyFavorite() {
   const dispatch = useDispatch();
   const [myFavorites, setMyFavorites] = useState([]);
 
@@ -48,7 +48,7 @@ function myFavorite() {
   );
 }
 
-export default withRouter(myFavorite);
+export default withRouter(MyFavorite);
 
 const NothingBox = styled.div`
   display: flex;

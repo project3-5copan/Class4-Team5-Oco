@@ -62,7 +62,7 @@ const ReplyInput = function ({
       alert('대댓글이 등록되었습니다.');
       setValue('');
       FetchReply();
-      window.location.replace(`${location.pathname}`);
+      window.location.replace(`${window.location.pathname}`);
     });
   };
 
