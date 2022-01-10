@@ -90,26 +90,29 @@ const Footer = () => {
         <St.MainLink
           href="/"
           title={"메인으로 이동"}
-          logo={process.env.PUBLIC_URL + "/blueLogo.png"}
+          logo={process.env.PUBLIC_URL + "/ocologo.png"}
         />
         <St.Description>
-          <St.DescSpan>Upbit Clone Project - Downbit</St.DescSpan>
-          <St.DescSpan>Created by Seongkyun Yu</St.DescSpan>
+          <St.DescSpan>Coin Community Web Page Project </St.DescSpan>
+          {/* <St.DescSpan>Created by Seongkyun Yu</St.DescSpan> */}
           <St.DescSpan>
-            Copyright © 2020 DOWNBIT INC. ALL RIGHTS RESERVED.
+            Cooooooooooooin
+          </St.DescSpan>
+          <St.DescSpan>
+            Cooooooooooooin
           </St.DescSpan>
         </St.Description>
         <St.ContactContainer>
-          <St.LinkTitle>Contact Me</St.LinkTitle>
+          <St.LinkTitle>Coooin</St.LinkTitle>
           <ul>
             <li>
-              <St.LinkTag href="https://github.com/Seongkyun-Yu/upbit-clone">
+              <St.LinkTag href="https://github.com/project3-5copan/Class4-Team5-Oco.git">
                 <FontAwesomeIcon
                   icon={faGithub}
                   size="lg"
                   title={"Github 아이콘"}
                 />
-                <St.LinkSpan>github.com/Seongkyun-Yu/upbit-clone</St.LinkSpan>
+                <St.LinkSpan>BitCoin</St.LinkSpan>
               </St.LinkTag>
             </li>
             <li>
@@ -119,7 +122,7 @@ const Footer = () => {
                   size="lg"
                   title={"이메일 아이콘"}
                 />
-                <St.LinkSpan>ysungkyun@gmail.com</St.LinkSpan>
+                <St.LinkSpan>UFT</St.LinkSpan>
               </St.LinkTag>
             </li>
           </ul>

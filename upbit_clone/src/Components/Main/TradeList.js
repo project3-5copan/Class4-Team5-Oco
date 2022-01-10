@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Decimal from "decimal.js";
 import moment from "moment-timezone";
 
-import TradeListItem from "./TradeListItem";
-import Loading from "../Global/Loading";
+// import TradeListItem from "./TradeListItem";
+// import Loading from "../Global/Loading";
 
 import withTradeListData from "../../Container/withTradeListData";
 import withThemeData from "../../Container/withThemeData";
@@ -79,7 +79,7 @@ const St = {
 const TradeList = ({ theme, selectedTradeListData, isTradeListLoading }) => {
   return (
     <St.Container>
-      <St.HiddenH3>실시간 체결내역</St.HiddenH3>
+      {/* <St.HiddenH3>실시간 체결내역</St.HiddenH3>
       <St.TradeListTitle bgColor={theme.lightGray1}>
         <St.TitleListItem mobileSNone={true} textAlign={"center"}>
           체결시간
@@ -89,8 +89,8 @@ const TradeList = ({ theme, selectedTradeListData, isTradeListLoading }) => {
         <St.TitleListItem mobileMNone={true} textAlign={"right"}>
           체결금액
         </St.TitleListItem>
-      </St.TradeListTitle>
-      <St.TradeListUL scrollColor={theme.middleGray}>
+      </St.TradeListTitle> */}
+      {/* <St.TradeListUL scrollColor={theme.middleGray}>
         {isTradeListLoading || !selectedTradeListData ? (
           <Loading />
         ) : (
@@ -112,7 +112,7 @@ const TradeList = ({ theme, selectedTradeListData, isTradeListLoading }) => {
             );
           })
         )}
-      </St.TradeListUL>
+      </St.TradeListUL> */}
     </St.Container>
   );
 };

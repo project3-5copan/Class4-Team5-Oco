@@ -7,9 +7,9 @@ import Header from "../Components/Global/Header";
 import CoinInfoHeader from "../Components/Main/CoinInfoHeader";
 import ChartDataConsole from "../Components/Main/ChartDataConsole";
 import MainChart from "../Components/Main/MainChart";
-// import Orderbook from "../Components/Main/Orderbook";
-// import OrderInfo from "../Components/Main/OrderInfo";
-// import TradeList from "../Components/Main/TradeList";
+import Orderbook from "../Components/Main/Orderbook";
+import OrderInfo from "../Components/Main/OrderInfo";
+import TradeList from "../Components/Main/TradeList";
 import CoinList from "../Components/Main/CoinList";
 import Footer from "../Components/Global/Footer";
 
@@ -93,10 +93,10 @@ const Main = ({ match, widthSize, heightSize }) => {
               <ChartDataConsole />
               <MainChart />
               <St.TradeInfoContainer>
-                {/* <Orderbook /> */}
+                <Orderbook />
                 <St.TradeOrderContainer>
-                  {/* <OrderInfo />
-                  <TradeList /> */}
+                  <OrderInfo />
+                  <TradeList />
                 </St.TradeOrderContainer>
               </St.TradeInfoContainer>
             </St.ChartAndTradeContainer>

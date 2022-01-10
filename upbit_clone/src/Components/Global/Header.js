@@ -8,7 +8,8 @@ const St = {
     z-index: 100;
     width: 100%;
     height: 60px;
-    background-color: rgb(9, 54, 135);
+    // background-color: rgb(9, 54, 135);
+    background-color: white;
   `,
   Container: styled.div`
     display: flex;
@@ -50,7 +51,7 @@ const Header = ({ isRootURL }) => {
         <St.SiteHeading>
           <St.MainLink
             href="/"
-            logo={process.env.PUBLIC_URL + "/whiteLogo.png"}
+            logo={process.env.PUBLIC_URL + "/ocologo.png"}
             title={"메인으로 이동"}
           >
             업비트

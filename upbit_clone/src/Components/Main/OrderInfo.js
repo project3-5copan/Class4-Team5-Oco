@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import OrderInfoAskBid from "./OrderInfoAskBid";
+// import OrderInfoAskBid from "./OrderInfoAskBid";
 
 import withSelectedOption from "../../Container/withSelectedOption";
 import withThemeData from "../../Container/withThemeData";
 import withSelectedCoinName from "../../Container/withSelectedCoinName";
 
-import { changeAskBidOrder } from "../../Reducer/coinReducer";
+// import { changeAskBidOrder } from "../../Reducer/coinReducer";
 import isEqual from "react-fast-compare";
 
 const St = {
@@ -62,46 +62,7 @@ const OrderInfo = ({
 }) => {
   const dispatch = useDispatch();
   return (
-    <St.Container>
-      <St.HiddenH3>주문 정보</St.HiddenH3>
-      <St.OrderTypeContainer>
-        <St.OrderTypeLi>
-          <St.OrderTypeBtn
-            borderBottom={selectedAskBidOrder === "bid" && theme.strongRed}
-            fontColor={selectedAskBidOrder === "bid" && theme.strongRed}
-            onClick={() => dispatch(changeAskBidOrder("bid"))}
-          >
-            매수
-          </St.OrderTypeBtn>
-        </St.OrderTypeLi>
-        <St.OrderTypeLi>
-          <St.OrderTypeBtn
-            borderBottom={selectedAskBidOrder === "ask" && theme.strongBlue}
-            fontColor={selectedAskBidOrder === "ask" && theme.strongBlue}
-            onClick={() => dispatch(changeAskBidOrder("ask"))}
-          >
-            매도
-          </St.OrderTypeBtn>
-        </St.OrderTypeLi>
-        <St.OrderTypeLi>
-          <St.OrderTypeBtn
-            borderBottom={selectedAskBidOrder === "tradeList" && "black"}
-            fontColor={selectedAskBidOrder === "tradeList" && "black"}
-            onClick={() => dispatch(changeAskBidOrder("tradeList"))}
-          >
-            거래내역
-          </St.OrderTypeBtn>
-        </St.OrderTypeLi>
-      </St.OrderTypeContainer>
-      <OrderInfoAskBid
-        theme={theme}
-        selectedAskBidOrder={selectedAskBidOrder}
-        coinSymbol={coinSymbol}
-        orderPrice={orderPrice}
-        orderAmount={orderAmount}
-        orderTotalPrice={orderTotalPrice}
-      />
-    </St.Container>
+    <div>코인 댓글</div>
   );
 };
 
