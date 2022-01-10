@@ -174,7 +174,7 @@ function RegisterPage(props) {
           <FilledInput
             id="github"
             name="github"
-            placeholder="ex) https://github.com/ragnarok-forU"
+            placeholder="ex) https://github.com/project3-5copan/Class4-Team5-Oco"
             {...register('github', {
               required: true,
               pattern:
