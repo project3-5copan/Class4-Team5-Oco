@@ -9,16 +9,16 @@ export const HeadbarData = [
     icon: <TiIcons.TiClipboard />,
     Name: 'nav-text',
   },
+  // {
+  //   title: '채팅(+)',
+  //   path: '/chat',
+  //   icon: <BsIcons.BsChatDotsFill />,
+  //   Name: 'nav-text',
+  // },
   {
-    title: '채팅(+)',
-    path: '/chat',
-    icon: <BsIcons.BsChatDotsFill />,
-    Name: 'nav-text',
-  },
-  {
-    title: '문의하기(+)',
-    path: '/Contact',
-    icon: <BsIcons.BsEnvelopeFill />,
+    title: '마이페이지',
+    path: '/mypage',
+    icon: <BsIcons.BsFillPersonFill />,
     Name: 'nav-text',
   },
 ];

@@ -5,7 +5,7 @@ import MainDescription2 from 'assests/0oco.png';
 import MainDescription3 from 'assests/0oco.png';
 import withSize from "../Container/withSize";
 import { viewSize } from "../styles/theme";
-import Header from "../components/Global/Header";
+// import Header from "../components/Global/Header";
 import CoinInfoHeader from "../components/Main/CoinInfoHeader";
 import ChartDataConsole from "../components/Main/ChartDataConsole";
 import MainChart from "../components/Main/MainChart";
@@ -13,7 +13,7 @@ import MainChart from "../components/Main/MainChart";
 // import OrderInfo from "../Components/Main/OrderInfo";
 // import TradeList from "../Components/Main/TradeList";
 import CoinList from "../components/Main/CoinList";
-import Footer from "../components/Global/Footer";
+// import Footer from "../components/Global/Footer";
 
 const St = {
   MainContentContainer: styled.div`
@@ -105,7 +105,7 @@ const Main = ({ match, widthSize, heightSize }) => {
 
   return (
     <>
-      <Header isRootURL={isRootURL} />
+      {/* <Header isRootURL={isRootURL} /> */}
       <St.MainContentContainer>
         {
           // 차트 및 주문 관련 뷰는 메인 페이지이면서 tablet 사이즈보다 크거나, 메인 페이지가 아닌 경우에만 그린다
@@ -136,7 +136,7 @@ const Main = ({ match, widthSize, heightSize }) => {
           )
         }
       </St.MainContentContainer>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
