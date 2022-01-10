@@ -36,7 +36,7 @@ export const InputBox = styled.div`
     font-weight: 700;
     margin-right: 220px;
   }
-  &: focus-within {
+  & focus-within {
     color: #4957a5;
   }
 `;
@@ -117,7 +117,7 @@ export const RadioBox = styled.div`
     font-weight: 700;
     margin-right: 140px;
   }
-  &: focus-within {
+  & focus-within {
     color: #4957a5;
   }
 `;
@@ -151,7 +151,7 @@ export const SelectBox = styled.div`
     font-size: 14px;
     font-weight: 700;
   }
-  &: focus-within {
+  & focus-within {
     color: #4957a5;
   }
 `;

@@ -32,7 +32,7 @@ app.use('/api/like', likeRoute);
 app.use('/api/reply', replyRoute);
 
 
-const port = 5001;
+const port = 5000;
 app.listen(port, () => {
   console.log(`${port}번으로 서버 실행 중입니다.`)
 });

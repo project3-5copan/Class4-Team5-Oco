@@ -1,7 +1,7 @@
 {
-  "name": "raise-project",
+  "name": "oco-project",
   "version": "0.1.0",
-  "author": "raise-project-members",
+  "author": "oco-project-members",
   "description": "Beautify all things in your life",
   "private": true,
   "dependencies": {
@@ -57,10 +57,6 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.1",
-    "prettier-eslint": "^13.0.0"
+    "cross-env": "^7.0.3"    
   }
 }
