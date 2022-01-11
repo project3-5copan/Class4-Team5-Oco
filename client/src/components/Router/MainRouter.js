@@ -5,7 +5,7 @@ import Main from "../../pages/Main";
 const MainRouter = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Main} />
+      <Route exact path="/board" component={Main} />
       {/* <Route exact path="/trade" component={Main} /> */}
     </Switch>
   );

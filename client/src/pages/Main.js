@@ -1,19 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainDescription1 from 'assests/0oco.png';
-import MainDescription2 from 'assests/0oco.png';
-import MainDescription3 from 'assests/0oco.png';
 import withSize from "../Container/withSize";
 import { viewSize } from "../styles/theme";
-// import Header from "../components/Global/Header";
 import CoinInfoHeader from "../components/Main/CoinInfoHeader";
 import ChartDataConsole from "../components/Main/ChartDataConsole";
 import MainChart from "../components/Main/MainChart";
-// import Orderbook from "../Components/Main/Orderbook";
-// import OrderInfo from "../Components/Main/OrderInfo";
-// import TradeList from "../Components/Main/TradeList";
 import CoinList from "../components/Main/CoinList";
-// import Footer from "../components/Global/Footer";
+import MainDescription from '../assests/0oco01.png'
 
 const St = {
   MainContentContainer: styled.div`
@@ -88,9 +81,9 @@ const St = {
 //       </MainTitle>
       
 //       <MainBox>
-//         <MainImg src={MainDescription1} />
-//         <MainImg2 src={MainDescription2} />
-//         <MainImg3 src={MainDescription3} />
+//         <MainImg src={MainDescription} />
+//         <MainImg2 src={MainDescription} />
+//         <MainImg3 src={MainDescription} />
 //       </MainBox>
 //     </>
 //   );
@@ -101,7 +94,7 @@ const St = {
 
 
 const Main = ({ match, widthSize, heightSize }) => {
-  const isRootURL = match.path === "/";
+  const isRootURL = match.path === "/board";
 
   return (
     <>

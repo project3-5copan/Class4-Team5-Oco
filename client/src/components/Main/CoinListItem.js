@@ -167,7 +167,7 @@ const CoinListItem = ({
 
   const changeMarket = useCallback(() => {
     dispatch(startChangeMarketAndData(marketName));
-    history.push("/trade");
+    history.push("/board");
   }, [dispatch, marketName, history]);
 
   return (

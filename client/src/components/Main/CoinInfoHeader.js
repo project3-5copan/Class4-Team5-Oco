@@ -3,8 +3,8 @@ import styled from "styled-components";
 import withSelectedCoinName from "../../Container/withSelectedCoinName";
 import withSelectedCoinPrice from "../../Container/withSelectedCoinPrice";
 import withThemeData from "../../Container/withThemeData";
-import isEqual from "react-fast-compare";
-import theme from "../../styles/theme";
+// import isEqual from "react-fast-compare";
+import { theme } from "../../styles/theme";
 
 
 
@@ -151,7 +151,7 @@ const CoinInfoHeader = ({
   volume24Hour,
   price,
 }) => {
-  const priceColor = changeRate24Hour > 0 ? theme.priceUp : theme.priceDown;
+  const priceColor = changeRate24Hour > 0 ? theme.priceUp : theme.priceDown
   return (
     <St.CoinInfoContainer>
       <St.HiddenH3>코인 가격 및 기타 정보</St.HiddenH3>

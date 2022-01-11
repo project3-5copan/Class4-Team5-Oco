@@ -4,7 +4,7 @@ import UpdateTime from 'library/utils/updateTime';
 import DeleteBoard from 'components/Board/Section/Board/DeleteBoard';
 import LikeButton from '../Like/LikeButton';
 import CommentButton from '../Comment/CommentButton';
-import Github from 'assests/Github.png';
+import Coin from 'assests/coin.png';
 import styled from 'styled-components';
 
 function MyLikeBoard(props) {
@@ -17,9 +17,9 @@ function MyLikeBoard(props) {
           <BoardHeader style={{ display: 'flex' }}>
             <NameBox>
               <Writer>{props.writer}</Writer>
-              <GithubImg
-                src={Github}
-                alt="GitHub"
+              <GithubImg              
+                src={Coin}
+                alt="Coin"
                 onClick={() => window.open(`${props.user.github}`, '_blank')}
               />
             </NameBox>
@@ -63,8 +63,8 @@ function MyLikeBoard(props) {
 export default withRouter(MyLikeBoard);
 
 const GithubImg = styled.img`
-  width: 28px;
-  height: 28px;
+  width: 18px;
+  height: 18px;
   cursor: pointer;
 `;
 
@@ -75,7 +75,7 @@ const AddBoardBox = styled.div`
 `;
 
 const Writer = styled.span`
-  width: 60px;
+  width: 80px;
   height: 25px;
   font-size: 14px;
   padding-top: 3px;

@@ -5,7 +5,7 @@ import DeleteBoard from './DeleteBoard';
 import LikeButton from '../Like/LikeButton';
 import CommentButton from '../Comment/CommentButton';
 import ShowInfo from '../ShowInfo/ShowInfo';
-import Github from 'assests/Github.png';
+import Coin from 'assests/coin.png';
 import styled from 'styled-components';
 
 function AddBoard(props) {
@@ -28,8 +28,8 @@ function AddBoard(props) {
                   <NameBox>
                     <Writer>{props.writer}</Writer>
                     <GithubImg
-                      src={Github}
-                      alt="GitHub"
+                      src={Coin}
+                      alt="Coin"
                       onClick={() =>
                         window.open(`${props.user.github}`, '_blank')
                       }

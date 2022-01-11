@@ -1,6 +1,15 @@
 import React from 'react';
 import * as BsIcons from 'react-icons/bs';
 import * as TiIcons from 'react-icons/ti';
+import CoinList from "../../components/Main/CoinList";
+
+// export const HeadbarData = () => {
+      
+//     return (
+//       <>  
+//       <CoinList/>
+//       </>
+//     )};
 
 export const HeadbarData = [
   {
@@ -20,5 +29,5 @@ export const HeadbarData = [
     path: '/mypage',
     icon: <BsIcons.BsFillPersonFill />,
     Name: 'nav-text',
-  },
+  },  
 ];

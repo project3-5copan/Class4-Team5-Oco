@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { auth } from 'modules/actions/user';
 import { useDispatch } from 'react-redux';
-import * as SiIcons from 'react-icons/si';
+import * as GiIcons from 'react-icons/gi';
 import * as AiIcons from 'react-icons/ai';
 import * as MdIcons from 'react-icons/md';
 import { HeadbarData } from './HeadbarData';
@@ -95,10 +95,10 @@ const Header = props => {
         <div>
           <p className="RaiseDescription">
             <Link to="/" className="Raise">
-              OocPan
+              OcoPan
             </Link>
             오코판!
-            <SiIcons.SiRstudio className="logo" size="18px" />
+            <GiIcons.GiOuroboros className="logo" size="18px" />
           </p>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
