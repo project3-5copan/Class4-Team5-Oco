@@ -11,30 +11,28 @@ import ChartDataConsole from "../components/Main/ChartDataConsole";
 import MainChart from "../components/Main/MainChart";
 import CoinList from "../components/Main/CoinList";
 
-const Hst = {
-  color: "white",
-  background: "teal",
-  padding: ".375rem .75rem",
-  border: "1px solid teal",
-  borderRadius: ".25rem",
-  fontSize: "1rem",
-  lineHeight: 1.5,
-  // MainContentContainer: styled.div`
-  //      display: flex;
-  //      justify-content: center;
-  //      max-width: 1500px;
-  //      margin: 0 auto;
-  //      margin-top: 10px;
-  //      margin-bottom: 50px;
-  //      width: 100%;
-  //      height: 100%;`
+const St = {
+  nameDiv: styled.div`
+    height: 100%;
+    width: 100%;
+    background: teal;
+    text-align: center;
+    border: 1px solid teal;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    padding: 0.375rem 0.75rem;
+    color: white;
+  `
 }
 
-function Board({ match,coinNameKor }) {
+function Board({ match, coinNameKor }) {
+
   return (
+
     <>
+      <St.nameDiv><h1>{coinNameKor} 차트</h1></St.nameDiv>
       <AppUpbit />
-      <h1 style={Hst}>{coinNameKor} 게시판</h1>
+      <St.nameDiv><h1>{coinNameKor} 게시판</h1></St.nameDiv>
       <Route exact path={match.path} component={BoardView} />
       <Route exact path={`${match.path}/:boardId`} component={BoardDetail} />
     </>
