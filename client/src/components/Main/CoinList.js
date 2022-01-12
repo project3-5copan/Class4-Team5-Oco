@@ -26,7 +26,7 @@ const St = {
     @media ${({ theme }) => theme.desktop} {
       display: block;
       max-width: 400px;
-      height: 615px};
+      height: ${({ heightSize }) => `${heightSize}px`};
       margin-left: 10px;
     }
 
@@ -97,7 +97,7 @@ const St = {
   `,
   CoinUl: styled.ul`
     height: ${({ heightSize }) => `${heightSize + 70}px`};
-    min-height: 800px;
+    min-height: 100%;
     background-color: white;
     overflow-y: scroll;
     scrollbar-color: ${({ theme }) => theme.middleGray};

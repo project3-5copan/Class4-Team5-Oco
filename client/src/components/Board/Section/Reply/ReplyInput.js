@@ -6,6 +6,31 @@ import { uploadReply, getReply } from 'modules/actions/reply';
 import 'styles/board/board.css';
 import styled from 'styled-components';
 
+const ReplyButton = styled.button`
+  border-radius: 8px;
+  padding-top: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 10px;
+  width: 90px;
+  height: 35px;
+  text-align: center;
+  background-color: #ff0200;
+  color: #fff;
+  &active {
+    opacity: 0.7;
+  }
+`;
+
+const FormBox = styled.form`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const ReplyTotalBox = styled.div`
+  padding: 0 0 50px 50px;
+`;
+
 const ReplyInput = function ({
   id,
   name,
@@ -112,28 +137,3 @@ const ReplyInput = function ({
 };
 
 export default withRouter(ReplyInput);
-
-const ReplyButton = styled.button`
-  border-radius: 8px;
-  padding-top: 3px;
-  font-weight: 600;
-  font-size: 14px;
-  margin-left: 10px;
-  width: 90px;
-  height: 35px;
-  text-align: center;
-  background-color: #ff0200;
-  color: #fff;
-  &active {
-    opacity: 0.7;
-  }
-`;
-
-const FormBox = styled.form`
-  display: flex;
-  justify-content: flex-end;
-`;
-
-const ReplyTotalBox = styled.div`
-  padding: 0 0 50px 50px;
-`;

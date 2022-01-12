@@ -8,6 +8,47 @@ import { useDispatch } from 'react-redux';
 import { uploadBoard, listBoard } from 'modules/actions/board';
 import styled from 'styled-components';
 
+const BoardBox = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+`;
+
+const Alert = styled.p`
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  color: #de506b;
+  font-size: 13px;
+  padding: 4px 0px;
+`;
+
+const BoardWriteForm = styled.form`
+  display: flex;
+  justify-content: center;
+`;
+
+const BoardButton = styled.button`
+  border-radius: 8px;
+  font-weight: 600;
+  width: 100%;
+  height: 30px;
+  padding-left: 30px;
+  letter-spacing: 20px;
+  text-align: center;
+  background-color: #1a83ff;
+  color: #fff;
+  &:active {
+    opacity: 0.7;
+  }
+`;
+
+const PageNumber = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+`;
+
 function BoardView({ history }) {
   const dispatch = useDispatch();
   const userFrom = localStorage.getItem('userId');
@@ -152,44 +193,3 @@ function BoardView({ history }) {
 }
 
 export default withRouter(BoardView);
-
-const BoardBox = styled.div`
-  width: 800px;
-  margin: 0 auto;
-  height: 100%;
-`;
-
-const Alert = styled.p`
-  display: flex;
-  justify-content: center;
-  padding-bottom: 30px;
-  color: #de506b;
-  font-size: 13px;
-  padding: 4px 0px;
-`;
-
-const BoardWriteForm = styled.form`
-  display: flex;
-  justify-content: center;
-`;
-
-const BoardButton = styled.button`
-  border-radius: 8px;
-  font-weight: 600;
-  width: 800px;
-  height: 30px;
-  padding-left: 30px;
-  letter-spacing: 20px;
-  text-align: center;
-  background-color: #1a83ff;
-  color: #fff;
-  &:active {
-    opacity: 0.7;
-  }
-`;
-
-const PageNumber = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-`;

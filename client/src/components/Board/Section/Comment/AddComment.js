@@ -6,60 +6,6 @@ import { useDispatch } from 'react-redux';
 import { isauthorBoard } from 'modules/actions/board';
 import styled from 'styled-components';
 
-function AddComment(props) {
-  const dispatch = useDispatch();
-  const [isAuthor, setIsAuthor] = useState(false);
-  const UserId = localStorage.getItem('userId');
-
-  const checkAuthor = () => {
-    dispatch(isauthorBoard(props.user, props.boardId)).then(response => {
-      if (response.payload.success) {
-        setIsAuthor(true);
-      } else {
-        setIsAuthor(false);
-      }
-    });
-  };
-
-  useEffect(() => {
-    checkAuthor();
-  }, []);
-
-  return (
-    <>
-      <AddCommentBox key={props.id}>
-        <NameBox>
-          <WriterBox>
-            {isAuthor ? (
-              <Writer>
-                {props.writer}
-                <span>(작성자)</span>
-              </Writer>
-            ) : (
-              <Visitor>{props.writer}</Visitor>
-            )}
-          </WriterBox>
-          <DeleteBox>
-            {props.user === UserId ? (
-              <DeleteComment
-                id={props.id}
-                user={props.user}
-                onRemove={props.onRemove}
-              />
-            ) : null}
-          </DeleteBox>
-        </NameBox>
-        <CommentContent>{props.content}</CommentContent>
-        <TimeBox>
-          <UpdateTime time={props.time} />
-        </TimeBox>
-      </AddCommentBox>
-    </>
-  );
-}
-
-export default withRouter(AddComment);
-
 const AddCommentBox = styled.div`
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
@@ -120,3 +66,58 @@ const TimeBox = styled.div`
   font-weight: 600;
   margin-left: 10px;
 `;
+
+
+function AddComment(props) {
+  const dispatch = useDispatch();
+  const [isAuthor, setIsAuthor] = useState(false);
+  const UserId = localStorage.getItem('userId');
+
+  const checkAuthor = () => {
+    dispatch(isauthorBoard(props.user, props.boardId)).then(response => {
+      if (response.payload.success) {
+        setIsAuthor(true);
+      } else {
+        setIsAuthor(false);
+      }
+    });
+  };
+
+  useEffect(() => {
+    checkAuthor();
+  }, []);
+
+  return (
+    <>
+      <AddCommentBox key={props.id}>
+        <NameBox>
+          <WriterBox>
+            {isAuthor ? (
+              <Writer>
+                {props.writer}
+                <span>(작성자)</span>
+              </Writer>
+            ) : (
+              <Visitor>{props.writer}</Visitor>
+            )}
+          </WriterBox>
+          <DeleteBox>
+            {props.user === UserId ? (
+              <DeleteComment
+                id={props.id}
+                user={props.user}
+                onRemove={props.onRemove}
+              />
+            ) : null}
+          </DeleteBox>
+        </NameBox>
+        <CommentContent>{props.content}</CommentContent>
+        <TimeBox>
+          <UpdateTime time={props.time} />
+        </TimeBox>
+      </AddCommentBox>
+    </>
+  );
+}
+
+export default withRouter(AddComment);

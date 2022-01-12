@@ -20,38 +20,38 @@ const MainTitle = styled.h2`
   text-shadow: 2px 3px 4px gray;
 `;
 
-const MainImg = styled.img`
-  width: 600px;
-  height: 600px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-`;
+// const MainImg = styled.img`
+//   width: 600px;
+//   height: 600px;
+//   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+//   border-radius: 10px;
+// `;
 
-const MainImg2 = styled.img`
-  width: 600px;
-  height: 600px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  z-index: 100;
-  position: relative;
-  top: 80px;
-  left: -300px;
-`;
+// const MainImg2 = styled.img`
+//   width: 600px;
+//   height: 600px;
+//   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+//   border-radius: 10px;
+//   z-index: 100;
+//   position: relative;
+//   top: 80px;
+//   left: -300px;
+// `;
 
-const MainImg3 = styled.img`
-  width: 600px;
-  height: 600px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  z-index: 101;
-  position: relative;
-  top: 0px;
-  left: -400px;
-`;
+// const MainImg3 = styled.img`
+//   width: 600px;
+//   height: 600px;
+//   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+//   border-radius: 10px;
+//   z-index: 101;
+//   position: relative;
+//   top: 0px;
+//   left: -400px;
+// `;
 
-const MainBox = styled.div`
-  display: flex;
-`;
+// const MainBox = styled.div`
+//   display: flex;
+// `;
 
 const Main = () => {
   return (

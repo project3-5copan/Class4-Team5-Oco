@@ -6,71 +6,6 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { isauthorBoard } from 'modules/actions/board';
 
-function AddReply(props) {
-  const dispatch = useDispatch();
-  const [isAuthor, setIsAuthor] = useState(false);
-  const UserId = localStorage.getItem('userId');
-
-  const checkAuthor = () => {
-    dispatch(isauthorBoard(props.user, props.boardId)).then(response => {
-      if (response.payload.success) {
-        setIsAuthor(true);
-      } else {
-        setIsAuthor(false);
-      }
-    });
-  };
-
-  useEffect(() => {
-    let abortController = new AbortController();
-    const fetchData = async () => {
-      await checkAuthor();
-    };
-    fetchData();
-    return () => {
-      abortController.abort();
-    };
-  }, []);
-
-  return (
-    <>
-      <ReplyBox key={props.id}>
-        <ReplyUl>
-          <ReplyLi>
-            <DeleteBox>
-              {props.user === UserId ? (
-                <DeleteReply
-                  id={props.id}
-                  user={props.user}
-                  onRemove={props.onRemove}
-                />
-              ) : null}
-            </DeleteBox>
-            <WriterBox>
-              {isAuthor ? (
-                <Writer>
-                  {props.writer}
-                  <span>(작성자)</span>
-                </Writer>
-              ) : (
-                <Visitor>{props.writer}</Visitor>
-              )}
-            </WriterBox>
-          </ReplyLi>
-          <ReplyLi2>
-            <ReplyContent>{props.content}</ReplyContent>
-          </ReplyLi2>
-          <TimeBox>
-            <UpdateTime time={props.time} />
-          </TimeBox>
-        </ReplyUl>
-      </ReplyBox>
-    </>
-  );
-}
-
-export default withRouter(AddReply);
-
 const ReplyBox = styled.div`
   padding: 5px;
   display: flex;
@@ -146,3 +81,68 @@ const TimeBox = styled.div`
   font-weight: 600;
   margin-left: 10px;
 `;
+
+function AddReply(props) {
+  const dispatch = useDispatch();
+  const [isAuthor, setIsAuthor] = useState(false);
+  const UserId = localStorage.getItem('userId');
+
+  const checkAuthor = () => {
+    dispatch(isauthorBoard(props.user, props.boardId)).then(response => {
+      if (response.payload.success) {
+        setIsAuthor(true);
+      } else {
+        setIsAuthor(false);
+      }
+    });
+  };
+
+  useEffect(() => {
+    let abortController = new AbortController();
+    const fetchData = async () => {
+      await checkAuthor();
+    };
+    fetchData();
+    return () => {
+      abortController.abort();
+    };
+  }, []);
+
+  return (
+    <>
+      <ReplyBox key={props.id}>
+        <ReplyUl>
+          <ReplyLi>
+            <DeleteBox>
+              {props.user === UserId ? (
+                <DeleteReply
+                  id={props.id}
+                  user={props.user}
+                  onRemove={props.onRemove}
+                />
+              ) : null}
+            </DeleteBox>
+            <WriterBox>
+              {isAuthor ? (
+                <Writer>
+                  {props.writer}
+                  <span>(작성자)</span>
+                </Writer>
+              ) : (
+                <Visitor>{props.writer}</Visitor>
+              )}
+            </WriterBox>
+          </ReplyLi>
+          <ReplyLi2>
+            <ReplyContent>{props.content}</ReplyContent>
+          </ReplyLi2>
+          <TimeBox>
+            <UpdateTime time={props.time} />
+          </TimeBox>
+        </ReplyUl>
+      </ReplyBox>
+    </>
+  );
+}
+
+export default withRouter(AddReply);

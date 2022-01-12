@@ -29,7 +29,7 @@ const St = {
   TimeBtn: styled.button`
     /* width: 50px; */
     height: 20px;
-    width: 40px;
+    width: 45px;
     margin-left: 5px;
     font-size: 0.8rem;
     background-color: white;

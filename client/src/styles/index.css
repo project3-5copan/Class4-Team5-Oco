@@ -117,6 +117,7 @@ html, #root {
 } 
 
   body {
+    margin: 0, auto;
     background-color: #FAFAF9;
     position: relative;
     display: block;

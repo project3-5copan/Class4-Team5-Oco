@@ -9,6 +9,11 @@ import {
 import styled from 'styled-components';
 import LikeIcon from 'assests/Like.png';
 
+const Like = styled.img`
+  width: 20px;
+  height: 20px;
+`;
+
 function LikeButton({ boardId, boardTitle, boardContent, boardWriter }) {
   const dispatch = useDispatch();
   const userFrom = localStorage.getItem('userId');
@@ -91,8 +96,3 @@ function LikeButton({ boardId, boardTitle, boardContent, boardWriter }) {
 }
 
 export default LikeButton;
-
-const Like = styled.img`
-  width: 20px;
-  height: 20px;
-`;

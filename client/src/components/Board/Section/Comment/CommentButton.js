@@ -5,6 +5,13 @@ import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import CommentIcon from 'assests/Comment.png';
 
+const Comment = styled.img`
+  width: 20px;
+  height: 20px;
+`;
+
+const Count = styled.p``;
+
 function CommentButton({ boardId }) {
   const dispatch = useDispatch();
   const userFrom = localStorage.getItem('userId');
@@ -35,10 +42,3 @@ function CommentButton({ boardId }) {
 }
 
 export default withRouter(CommentButton);
-
-const Comment = styled.img`
-  width: 20px;
-  height: 20px;
-`;
-
-const Count = styled.p``;

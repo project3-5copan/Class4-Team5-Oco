@@ -11,6 +11,48 @@ import styled from 'styled-components';
 import Reply from 'assests/Reply.png';
 import List from 'assests/List.png';
 
+const BoardBox = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+`;
+
+const CommentButton = styled.button`
+  border-radius: 8px;
+  padding-top: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 10px;
+  width: 70px;
+  height: 35px;
+  text-align: center;
+  background-color: #ff0200;
+  color: #fff;
+  &:active {
+    opacity: 0.7;
+  }
+`;
+const CommentUl = styled.ul`
+  position: relative;
+`;
+
+const ReplyImg = styled.img`
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+`;
+
+const ListImg = styled.img`
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background-color: #eee;
+  border-radius: 50px;
+`;
+
 function BoardDetail(props) {
   const dispatch = useDispatch();
   const BoardId = props.match.params.boardId;
@@ -160,45 +202,3 @@ function BoardDetail(props) {
 }
 
 export default withRouter(BoardDetail);
-
-const BoardBox = styled.div`
-  width: 800px;
-  margin: 0 auto;
-  height: 100%;
-`;
-
-const CommentButton = styled.button`
-  border-radius: 8px;
-  padding-top: 3px;
-  font-weight: 600;
-  font-size: 14px;
-  margin-left: 10px;
-  width: 70px;
-  height: 35px;
-  text-align: center;
-  background-color: #ff0200;
-  color: #fff;
-  &:active {
-    opacity: 0.7;
-  }
-`;
-const CommentUl = styled.ul`
-  position: relative;
-`;
-
-const ReplyImg = styled.img`
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 0;
-  right: 5px;
-  cursor: pointer;
-`;
-
-const ListImg = styled.img`
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  background-color: #eee;
-  border-radius: 50px;
-`;

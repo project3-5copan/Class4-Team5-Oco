@@ -4,6 +4,11 @@ import { useDispatch } from 'react-redux';
 import { deleteComment } from 'modules/actions/comment';
 import styled from 'styled-components';
 
+const DeleteButton = styled.button`
+  color: #ff0200;
+  font-size: 12px;
+`;
+
 function DeleteComment(props) {
   const dispatch = useDispatch();
   const UserId = localStorage.getItem('userId');
@@ -26,8 +31,3 @@ function DeleteComment(props) {
 }
 
 export default withRouter(DeleteComment);
-
-const DeleteButton = styled.button`
-  color: #ff0200;
-  font-size: 12px;
-`;

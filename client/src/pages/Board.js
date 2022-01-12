@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Route, withRouter } from 'react-router';
+import withSelectedCoinName from '../Container/withSelectedCoinName';
 import BoardView from 'components/Board/BoardView';
 import BoardDetail from 'components/Board/BoardDetail';
 import AppUpbit from 'components/Upbit/AppUpbit';
@@ -10,19 +11,37 @@ import ChartDataConsole from "../components/Main/ChartDataConsole";
 import MainChart from "../components/Main/MainChart";
 import CoinList from "../components/Main/CoinList";
 
+const Hst = {
+  color: "white",
+  background: "teal",
+  padding: ".375rem .75rem",
+  border: "1px solid teal",
+  borderRadius: ".25rem",
+  fontSize: "1rem",
+  lineHeight: 1.5,
+  // MainContentContainer: styled.div`
+  //      display: flex;
+  //      justify-content: center;
+  //      max-width: 1500px;
+  //      margin: 0 auto;
+  //      margin-top: 10px;
+  //      margin-bottom: 50px;
+  //      width: 100%;
+  //      height: 100%;`
+}
 
-
-function Board({ match }) {
+function Board({ match,coinNameKor }) {
   return (
     <>
       <AppUpbit />
+      <h1 style={Hst}>{coinNameKor} 게시판</h1>
       <Route exact path={match.path} component={BoardView} />
       <Route exact path={`${match.path}/:boardId`} component={BoardDetail} />
     </>
   );
 }
 
-export default withRouter(Board);
+export default withSelectedCoinName()(withRouter(Board));
 
 
 // const St = {

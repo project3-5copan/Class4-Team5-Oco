@@ -97,7 +97,7 @@ const St = {
   `,
   CoinUl: styled.ul`
     height: ${({ heightSize }) => `${heightSize + 70}px`};
-    min-height: 800px;
+    min-height: 100%;
     background-color: white;
     overflow-y: scroll;
     scrollbar-color: ${({ theme }) => theme.middleGray};

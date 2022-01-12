@@ -4,6 +4,14 @@ import { useDispatch } from 'react-redux';
 import { deleteBoard } from 'modules/actions/board';
 import styled from 'styled-components';
 
+const DeleteButton = styled.button`
+  color: #ff0200;
+  font-size: 12px;
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+`;
+
 function DeleteBoard(props) {
   const dispatch = useDispatch();
   const UserId = localStorage.getItem('userId');
@@ -25,11 +33,3 @@ function DeleteBoard(props) {
 }
 
 export default withRouter(DeleteBoard);
-
-const DeleteButton = styled.button`
-  color: #ff0200;
-  font-size: 12px;
-  width: 50px;
-  display: flex;
-  justify-content: flex-end;
-`;

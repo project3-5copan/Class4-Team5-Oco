@@ -7,61 +7,6 @@ import CommentButton from '../Comment/CommentButton';
 import Coin from 'assests/coin.png';
 import styled from 'styled-components';
 
-function MyLikeBoard(props) {
-  const currentUser = window.localStorage.getItem('userId');
-
-  return (
-    <>
-      <AddBoardBox key={props.id}>
-        <div>
-          <BoardHeader style={{ display: 'flex' }}>
-            <NameBox>
-              <Writer>{props.writer}</Writer>
-              <GithubImg              
-                src={Coin}
-                alt="Coin"
-                onClick={() => window.open(`${props.user.github}`, '_blank')}
-              />
-            </NameBox>
-            <TimeBox>
-              <UpdateTime time={props.time} />
-            </TimeBox>
-            <DeleteBoardBox>
-              {props.user === currentUser ? (
-                <>
-                  <DeleteBoard
-                    board={props.id}
-                    user={props.user}
-                    history={props.history}
-                    onRemove={props.onRemove}
-                  />
-                </>
-              ) : null}
-            </DeleteBoardBox>
-          </BoardHeader>
-        </div>
-        <Link to={`/board/${props.id}`}>
-          <Title>{props.title}</Title>
-          <Content>{props.content}</Content>
-        </Link>
-        <div style={{ textAlign: 'right' }}>
-          <LikeButton
-            boardId={props.id}
-            boardWriter={props.writer}
-            boardTitle={props.title}
-            boardContent={props.content}
-          />
-          <Link to={`/board/${props.id}`}>
-            <CommentButton boardId={props.id} />
-          </Link>
-        </div>
-      </AddBoardBox>
-    </>
-  );
-}
-
-export default withRouter(MyLikeBoard);
-
 const GithubImg = styled.img`
   width: 18px;
   height: 18px;
@@ -122,3 +67,58 @@ const Content = styled.div`
 `;
 
 const DeleteBoardBox = styled.div``;
+
+function MyLikeBoard(props) {
+  const currentUser = window.localStorage.getItem('userId');
+
+  return (
+    <>
+      <AddBoardBox key={props.id}>
+        <div>
+          <BoardHeader style={{ display: 'flex' }}>
+            <NameBox>
+              <Writer>{props.writer}</Writer>
+              <GithubImg              
+                src={Coin}
+                alt="Coin"
+                onClick={() => window.open(`${props.user.github}`, '_blank')}
+              />
+            </NameBox>
+            <TimeBox>
+              <UpdateTime time={props.time} />
+            </TimeBox>
+            <DeleteBoardBox>
+              {props.user === currentUser ? (
+                <>
+                  <DeleteBoard
+                    board={props.id}
+                    user={props.user}
+                    history={props.history}
+                    onRemove={props.onRemove}
+                  />
+                </>
+              ) : null}
+            </DeleteBoardBox>
+          </BoardHeader>
+        </div>
+        <Link to={`/board/${props.id}`}>
+          <Title>{props.title}</Title>
+          <Content>{props.content}</Content>
+        </Link>
+        <div style={{ textAlign: 'right' }}>
+          <LikeButton
+            boardId={props.id}
+            boardWriter={props.writer}
+            boardTitle={props.title}
+            boardContent={props.content}
+          />
+          <Link to={`/board/${props.id}`}>
+            <CommentButton boardId={props.id} />
+          </Link>
+        </div>
+      </AddBoardBox>
+    </>
+  );
+}
+
+export default withRouter(MyLikeBoard);
