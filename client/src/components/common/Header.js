@@ -49,7 +49,7 @@ const Header = props => {
   useEffect(() => {
     getName();
     console.log('안녕하세요. 오코판사이트 입니다');
-    console.log('https://github.com/dal0110/Project-Studyy');
+    console.log('https://github.com/project3-5copan/Class4-Team5-Oco');
     console.log(
       '기타 이슈사항을 이곳에 남겨주시면 감사하겠습니다. 좋은 하루 되세요 !!',
     );
@@ -95,10 +95,10 @@ const Header = props => {
         <div>
           <p className="RaiseDescription">
             <Link to="/" className="Raise">
-              OocPan
+              OcoPan
             </Link>
             오코판!
-            <GiIcons.GiOuroboros className="logo" size="25px" />
+            <GiIcons.GiOuroboros className="logo" size="18px" />
           </p>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>

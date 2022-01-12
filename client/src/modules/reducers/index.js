@@ -1,4 +1,7 @@
 import { combineReducers } from 'redux';
+import { coinReducer, coinSaga } from "./coinReducer";
+import { loadingReducer } from "./loadingReducer";
+import { all } from "redux-saga/effects";
 
 import userReducer from './user';
 import boardReducer from './board';
@@ -12,6 +15,12 @@ const rootReducer = combineReducers({
   comment: commentReducer,
   like: likeReducer,
   reply: replyReducer,
+  Coin: coinReducer,
+  Loading: loadingReducer,
 });
 
-export default rootReducer;
+function* rootSaga() {
+  yield all([coinSaga()]);
+}
+
+export { rootReducer, rootSaga } ;

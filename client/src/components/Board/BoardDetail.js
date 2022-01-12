@@ -70,7 +70,7 @@ function BoardDetail(props) {
       alert('댓글이 등록되었습니다.');
       setValue('');
       FetchComment();
-      window.location.replace(`${location.pathname}`);
+      window.location.replace(`${window.location.pathname}`);
     });
   };
 

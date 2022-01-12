@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <Project>
         <a
-          href="https://github.com/dal0110/Project-Study"
+          href="https://github.com/project3-5copan/Class4-Team5-Oco"
           target="_blank"
           rel="noreferrer noopener"
         >

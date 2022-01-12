@@ -69,7 +69,7 @@ const AddCommentBox = styled.div`
 const NameBox = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%:
+  width: 100%;
 `;
 
 const WriterBox = styled.div`

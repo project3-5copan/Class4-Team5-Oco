@@ -176,7 +176,7 @@ const BoardWriteForm = styled.form`
 const BoardButton = styled.button`
   border-radius: 8px;
   font-weight: 600;
-  width: 450px;
+  width: 800px;
   height: 30px;
   padding-left: 30px;
   letter-spacing: 20px;

@@ -1,6 +1,14 @@
 import styled from '@emotion/styled';
 import { media } from '../media_query';
 
+
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import Checkbox from '@material-ui/core/Checkbox';
+
+
 export const MainContainer = styled.div`
   display: flex;
   margin: 0 auto;
@@ -48,11 +56,6 @@ export const BorderButton = styled.button`
   border-radius: 30px;
 `;
 
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import Checkbox from '@material-ui/core/Checkbox';
 
 export const useStyles = makeStyles({
   root: {
