@@ -10,7 +10,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'styles/index.css';
 import App from 'app';
-import AppUpbit from 'AppUpbit';
 import * as serviceWorker from "./serviceWorker";
 
 import createSagaMiddleware from "redux-saga";
@@ -38,33 +37,12 @@ const createStoreWithMiddleware = applyMiddleware(
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(ReduxThunk, sagaMiddleware))
+  composeWithDevTools(applyMiddleware(ReduxThunk, sagaMiddleware, promiseMiddleware,))
 );
 
 sagaMiddleware.run(rootSaga);
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider
-      store={createStoreWithMiddleware(
-        rootReducer,
-        window.__REDUX_DEVTOOLS_EXTENSION__ &&
-        window.__REDUX_DEVTOOLS_EXTENSION__(),
-      )}
-    >
-      <App />
-    </Provider>
-    <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <BrowserRouter>
-          <GlobalStyle />
-          <AppUpbit />
-        </BrowserRouter>
-      </Provider>
-    </ThemeProvider>
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <Provider
@@ -76,6 +54,27 @@ ReactDOM.render(
 //     >
 //       <App />
 //     </Provider>
+//     <ThemeProvider theme={theme}>
+//       <Provider store={store}>
+//         <BrowserRouter>
+//           <GlobalStyle />
+//           <AppUpbit />
+//         </BrowserRouter>
+//       </Provider>
+//     </ThemeProvider>
 //   </React.StrictMode>,
 //   document.getElementById('rootapp'),
 // );
+ReactDOM.render(
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <GlobalStyle />
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById('rootapp'),
+);

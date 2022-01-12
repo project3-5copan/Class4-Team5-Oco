@@ -6,6 +6,7 @@ import loadable from '@loadable/component';
 import AppLayout from 'components/common/AppLayout';
 import MainRouter from "./components/Router/MainRouter";
 import Auth from 'library/utils/auth';
+import AppUpbit from 'components/Upbit/AppUpbit';
 
 const Main = loadable(() => import('pages/Main'));
 const Login = loadable(() => import('pages/Login'));
