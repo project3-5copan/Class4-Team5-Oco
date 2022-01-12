@@ -174,7 +174,7 @@ function RegisterPage(props) {
           <FilledInput
             id="github"
             name="github"
-            placeholder="ex) https://github.com/ragnarok-forU"
+            placeholder="ex) https://github.com/project3-5copan/Class4-Team5-Oco"
             {...register('github', {
               required: true,
               pattern:
@@ -205,15 +205,15 @@ function RegisterPage(props) {
           여자
         </RadioBox>
         <SelectBox>
-          <label htmlFor="field">개발분야</label>
+          <label htmlFor="field">관심분야</label>
           <select
             id="field"
             name="field"
             {...register('field', { required: true })}
           >
-            <option value="프론트엔드">프론트엔드</option>
-            <option value="백엔드">백엔드</option>
-            <option value="풀스택">풀스택</option>
+            <option value="블록체인">블록체인</option>
+            <option value="NFT">NFT</option>
+            <option value="메타버스">메타버스</option>
           </select>
         </SelectBox>
         <InputBox>
