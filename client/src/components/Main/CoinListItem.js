@@ -184,7 +184,7 @@ const CoinListItem = ({
           <St.CoinName theme={theme}>{coinName}</St.CoinName>
           <St.CoinNameEn>{enCoinName}</St.CoinNameEn>
         </St.CoinNameContainer>
-        <St.Price theme={theme} fontColor={fontColor} isTraded={isTraded}>
+        {/* <St.Price theme={theme} fontColor={fontColor} isTraded={isTraded}>
           {price.toLocaleString()}
         </St.Price>
         <St.ChangRateContainer>
@@ -197,7 +197,7 @@ const CoinListItem = ({
         </St.ChangRateContainer>
         <St.TradePrice>
           {tradePrice24Hour.toLocaleString() + " 백만"}
-        </St.TradePrice>
+        </St.TradePrice> */}
       </St.CoinBtn>
     </St.CoinLi>
   );
