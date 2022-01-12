@@ -29,5 +29,5 @@ export const HeadbarData = [
     path: '/mypage',
     icon: <BsIcons.BsFillPersonFill />,
     Name: 'nav-text',
-  },  
+  }  
 ];

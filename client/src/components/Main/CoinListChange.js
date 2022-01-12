@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { searchCoin } from "../../modules/reducers/coinReducer";
 import { useDispatch } from "react-redux";
 
-import CoinListItem from "./CoinListItem";
+import CoinListItem from "./CoinListItemChange";
 import Loading from "../Global/Loading";
 
 import withThemeData from "../../Container/withThemeData";
@@ -21,12 +21,12 @@ const St = {
     height: 100%;
     width: 100%;
     background-color: white;
-    overflow: hidden;
+    // overflow: hidden;
 
     @media ${({ theme }) => theme.desktop} {
       display: block;
-      max-width: 400px;
-      height: 615px};
+      min-width: 1200px;
+      height: ${({ heightSize }) => `${heightSize}px`};
       margin-left: 10px;
     }
 
@@ -48,12 +48,11 @@ const St = {
     height: 1px;
     clip: rect(0, 0);
     clip-path: polygon(0, 0);
-    overflow: hidden;
+    // overflow: hidden;
     text-indent: -9999px;
   `,
   CoinSearchContainer: styled.div`
     display: flex;
-    width: 100%;
     border-bottom: 1px solid ${({ theme }) => theme.lightGray2};
   `,
   CoinSearchInput: styled.input`
@@ -114,8 +113,11 @@ const St = {
     }
 
     @media ${({ theme }) => theme.desktop} {
-      display: block;
-      max-width: 400px;
+      display: flex;
+      flex-wrap: wrap;
+      // max-width: 200px;
+      overflow-y: auto;
+      min-height: 100px
       height: ${({ heightSize }) => `${heightSize}px`};
     }
   `,
@@ -147,15 +149,15 @@ const CoinList = ({
         />
         <St.CoinSearchBtn />
       </St.CoinSearchContainer>
-      <St.CoinSortContainer>
-        <St.CoinSortList width={"50px"} />
+      {/* <St.CoinSortContainer> */}
+        {/* <St.CoinSortList width={"50px"} />
         <St.CoinSortList textAlign={"left"}>한글명</St.CoinSortList>
         <St.CoinSortList>현재가</St.CoinSortList>
         <St.CoinSortList>상승률</St.CoinSortList>
         <St.CoinSortList width={"25%"} marginRight={"10px"}>
           거래대금
-        </St.CoinSortList>
-      </St.CoinSortContainer>
+        </St.CoinSortList> */}
+      {/* </St.CoinSortContainer> */}
       <St.CoinUl heightSize={heightSize - 140}>
         {isMarketNamesLoading || isInitCandleLoading ? (
           <Loading center={false} />

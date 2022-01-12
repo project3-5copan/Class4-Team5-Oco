@@ -15,9 +15,9 @@ import CoinList from "../components/Main/CoinList";
 function Board({ match }) {
   return (
     <>
+      <AppUpbit />
       <Route exact path={match.path} component={BoardView} />
       <Route exact path={`${match.path}/:boardId`} component={BoardDetail} />
-      <AppUpbit/>
     </>
   );
 }

@@ -5,7 +5,7 @@ import { viewSize } from "../styles/theme";
 import CoinInfoHeader from "../components/Main/CoinInfoHeader";
 import ChartDataConsole from "../components/Main/ChartDataConsole";
 import MainChart from "../components/Main/MainChart";
-import CoinList from "../components/Main/CoinList";
+import CoinList from "./CoinList";
 import MainDescription from '../assests/0oco01.png'
 
 
@@ -61,11 +61,12 @@ const Main = () => {
         오코판
       </MainTitle>
       
-      <MainBox>
+      {/* <MainBox>
         <MainImg src={MainDescription} />
         <MainImg2 src={MainDescription} />
         <MainImg3 src={MainDescription} />
-      </MainBox>
+      </MainBox> */}
+      <CoinList />
     </>
   );
 };
