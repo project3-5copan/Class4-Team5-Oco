@@ -7,12 +7,14 @@ import Pagination from '@material-ui/lab/Pagination';
 import { useDispatch } from 'react-redux';
 import { uploadBoard, listBoard } from 'modules/actions/board';
 import styled from 'styled-components';
+import withSelectedCoinName from '../../Container/withSelectedCoinName'
 
-function BoardView({ history }) {
+function BoardView({ history, coinNameKor }) {
   const dispatch = useDispatch();
   const userFrom = localStorage.getItem('userId');
   const writerFrom = localStorage.getItem('userName');
-
+  // const boardName = localStorage.getItem('coinNameKor');
+  // const [ boardName, getBoardName ] = useState(coinNameKor)
   const [totalPage, setTotalpage] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [Content, setContent] = useState([]);
@@ -22,11 +24,14 @@ function BoardView({ history }) {
     boardContent: '',
   });
   const { boardTitle, boardContent } = inputs;
-  // const { boardName }
+  
+
 
   useEffect(() => {
     FetchBoard();
-  }, [currentPage]);
+    getBoardName(coinNameKor)
+    console.log('coinNameKor:', coinNameKor)
+  }, [currentPage, coinNameKor]);
 
   const FetchBoard = () => {
     dispatch(listBoard({ page: currentPage })).then(response => {
@@ -36,6 +41,8 @@ function BoardView({ history }) {
       } else {
         alert('게시글을 불러올 수 없습니다.');
       }
+      alert('fetch boardName: ', coinNameKor)
+      console.log('fetch: ', coinNameKor)
     });
   };
 
@@ -71,7 +78,7 @@ function BoardView({ history }) {
     }
     let variables = {
       userFrom: userFrom,
-      // boardName: boardName,
+      boardName: boardName,
       boardTitle: boardTitle,
       boardContent: boardContent,
       boardWriter: boardWriter,
@@ -153,7 +160,7 @@ function BoardView({ history }) {
   );
 }
 
-export default withRouter(BoardView);
+export default withSelectedCoinName()(withRouter(BoardView));
 
 const BoardBox = styled.div`
   width: 100%;

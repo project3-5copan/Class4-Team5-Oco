@@ -16,8 +16,10 @@ const MainTop = styled.div`
 `;
 
 const MainImage = styled.img`
- width: 100%;
- height: 500px;
+ width: 50vw;
+ height: 50vw;
+ margin-left:auto;
+ margin-right:auto;
 `
 
 
