@@ -113,7 +113,6 @@ function AddBoard(props) {
   const showHandler = () => {
     setShowInfo(!showInfo);
   };
-
   return (
     <>
       <AddBoardBox key={props.id}>

@@ -29,19 +29,19 @@ function BoardView({ history, coinNameKor }) {
 
   useEffect(() => {
     FetchBoard();
-    getBoardName(coinNameKor)
-    console.log('coinNameKor:', coinNameKor)
+    // getBoardName(coinNameKor)
+    // console.log('coinNameKor:', coinNameKor)
   }, [currentPage, coinNameKor]);
 
   const FetchBoard = () => {
-    dispatch(listBoard({ page: currentPage })).then(response => {
+    dispatch(listBoard({ page: currentPage, coinName: coinNameKor })).then(response => {
       if (response.payload.success) {
         setContent(response.payload.boards);
         setTotalpage(Math.ceil(response.payload.count / 10));
       } else {
         alert('게시글을 불러올 수 없습니다.');
       }
-      alert('fetch boardName: ', coinNameKor)
+      // alert('fetch boardName: ', coinNameKor)
       console.log('fetch: ', coinNameKor)
     });
   };
@@ -78,7 +78,7 @@ function BoardView({ history, coinNameKor }) {
     }
     let variables = {
       userFrom: userFrom,
-      boardName: boardName,
+      coinName: coinNameKor,
       boardTitle: boardTitle,
       boardContent: boardContent,
       boardWriter: boardWriter,
@@ -88,6 +88,7 @@ function BoardView({ history, coinNameKor }) {
         setInput({
           boardTitle: '',
           boardContent: '',
+          coinName: ''
         });
         FetchBoard();
       } else {
@@ -118,6 +119,9 @@ function BoardView({ history, coinNameKor }) {
               />
             </li>
             <li>
+              <input type={'hidden'} value={coinNameKor}/>
+            </li>
+            <li>
               <BoardButton type="submit" onClick={onSubmit}>
                 작성
               </BoardButton>
@@ -128,7 +132,7 @@ function BoardView({ history, coinNameKor }) {
           </ul>
         </BoardWriteForm>
         {Content &&
-          Content.map((board, index) => {
+          Content.filter(board => board.coinName === coinNameKor).map((board, index) => {
             return (
               <React.Fragment key={index}>
                 <AddBoard
@@ -138,6 +142,7 @@ function BoardView({ history, coinNameKor }) {
                   writer={board.boardWriter}
                   title={board.boardTitle}
                   content={board.boardContent}
+                  coinName={board.coinNameKor}
                   history={`${history}`}
                   onRemove={onRemove}
                 />

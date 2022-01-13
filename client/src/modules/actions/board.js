@@ -33,9 +33,9 @@ export function getBoard(BoardId) {
 }
 
 // 게시글 리스트
-export function listBoard({ page: currentPage }) {
+export function listBoard({ page: currentPage, coinName: coinNameKor }) {
   const request = axios
-    .post('/api/board/getBoard', { page: currentPage })
+    .post('/api/board/getBoard', { page: currentPage, coinName: coinNameKor })
     .then(response => response.data);
 
   return {
@@ -72,7 +72,7 @@ export function deleteBoard(UserId, BoardId) {
 export function updateBoard(
   userFrom,
   boardId,
-  { boardTitle: boardTitle, boardContent: boardContent },
+  { boardTitle: boardTitle, boardContent: boardContent},
 ) {
   const request = axios
     .patch(`/api/board/${userFrom}/${boardId}`, {

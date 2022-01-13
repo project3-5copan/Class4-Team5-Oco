@@ -8,6 +8,7 @@ const { Like } = require("../models/Like");
   제목
   내용
   작성자
+  보드이름(코인이름)
 */
 
 const boardSchema = mongoose.Schema({
@@ -22,6 +23,9 @@ const boardSchema = mongoose.Schema({
         type: String
     },
     boardWriter: {
+        type: String
+    },
+    coinName: {
         type: String
     }
 },{ timestamps: true });
