@@ -9,7 +9,7 @@ import { uploadBoard, listBoard } from 'modules/actions/board';
 import styled from 'styled-components';
 import withSelectedCoinName from '../../Container/withSelectedCoinName'
 
-function BoardView({ history, coinNameKor }) {
+function BoardView({ history, coinNameKor, coinSymbol }) {
   const dispatch = useDispatch();
   const userFrom = localStorage.getItem('userId');
   const writerFrom = localStorage.getItem('userName');
@@ -31,10 +31,10 @@ function BoardView({ history, coinNameKor }) {
     FetchBoard();
     // getBoardName(coinNameKor)
     // console.log('coinNameKor:', coinNameKor)
-  }, [currentPage, coinNameKor]);
+  }, [currentPage, coinNameKor, coinSymbol]);
 
   const FetchBoard = () => {
-    dispatch(listBoard({ page: currentPage, coinName: coinNameKor })).then(response => {
+    dispatch(listBoard({ page: currentPage, coinSym: coinSymbol, coinName: coinNameKor })).then(response => {
       if (response.payload.success) {
         setContent(response.payload.boards);
         setTotalpage(Math.ceil(response.payload.count / 10));
@@ -42,7 +42,7 @@ function BoardView({ history, coinNameKor }) {
         alert('게시글을 불러올 수 없습니다.');
       }
       // alert('fetch boardName: ', coinNameKor)
-      console.log('fetch: ', coinNameKor)
+      console.log(`fetch: coinSym: ${coinSymbol}, coinName: ${coinNameKor}`)
     });
   };
 
@@ -79,6 +79,7 @@ function BoardView({ history, coinNameKor }) {
     let variables = {
       userFrom: userFrom,
       coinName: coinNameKor,
+      coinSym: coinSymbol,
       boardTitle: boardTitle,
       boardContent: boardContent,
       boardWriter: boardWriter,

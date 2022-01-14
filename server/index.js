@@ -20,6 +20,7 @@ app.use(cookieParser());
 const usersRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
 const boardRoute = require('./routes/board');
+const coinInfoRoute = require('./routes/coininfo');
 const commentRoute = require('./routes/comment');
 const likeRoute = require('./routes/like');
 const replyRoute = require('./routes/reply');
@@ -27,6 +28,7 @@ const replyRoute = require('./routes/reply');
 app.use('/api/user', usersRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/board', boardRoute);
+app.use('/api/coininfo', coinInfoRoute)
 app.use('/api/comment', commentRoute);
 app.use('/api/like', likeRoute);
 app.use('/api/reply', replyRoute);

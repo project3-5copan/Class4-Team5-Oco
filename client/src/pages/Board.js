@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Route, withRouter } from 'react-router';
 import withSelectedCoinName from '../Container/withSelectedCoinName';
 import BoardView from 'components/Board/BoardView';
+import BoardInfo from 'components/Board/BoardInfo';
 import BoardDetail from 'components/Board/BoardDetail';
 import AppUpbit from 'components/Upbit/AppUpbit';
 import { viewSize } from "../styles/theme";
@@ -32,6 +33,9 @@ function Board({ match, coinNameKor }) {
     <>
       <St.nameDiv><h1>{coinNameKor} 차트</h1></St.nameDiv>
       <AppUpbit />
+      <St.nameDiv><h1>{coinNameKor} 정보</h1></St.nameDiv>
+      {/* <Route path={`/coninfo/:coinname`} component={BoardInfo} /> */}
+      <Route exact path={match.path} component={BoardInfo} />
       <St.nameDiv><h1>{coinNameKor} 게시판</h1></St.nameDiv>
       <Route exact path={match.path} component={BoardView} />
       <Route exact path={`${match.path}/:boardId`} component={BoardDetail} />

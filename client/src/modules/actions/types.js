@@ -44,3 +44,6 @@ export const LIKE_LIST = 'list_list';
 export const UPLOAD_REPLY = 'upload_reply';
 export const GET_REPLY = 'get_reply';
 export const DELETE_REPLY = 'delete_reply';
+
+
+export const LIST_COIN = 'list_coin';
