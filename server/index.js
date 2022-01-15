@@ -21,7 +21,7 @@ app.use(cookieParser());
 const usersRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
 const boardRoute = require('./routes/board');
-const coinInfoRoute = require('./routes/coininfo');
+// const coinInfoRoute = require('./routes/coininfo');
 const commentRoute = require('./routes/comment');
 const likeRoute = require('./routes/like');
 const replyRoute = require('./routes/reply');
@@ -40,9 +40,19 @@ const loadJsSite = async (url) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);
-  const desc = await page.$eval('.desc', el => el.innerText)
-  await browser.close();  
-  return (desc)
+  if (page.$('.desc')) {
+    const desc = await page.$eval('.desc', el => el.innerText)
+    await browser.close();
+    return (desc)
+  }
+  else if (page.$('.description')) {
+    const desc = await page.$eval('.description', el => el.innerText)
+    await browser.close();
+    return (desc)
+  }
+  else {
+    console.log('no matching for selector')
+  }
 };
 
 // GET http://127.0.0.1:5000/api/coninfo/{coinName}
