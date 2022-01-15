@@ -7,7 +7,7 @@
 // import axios from "axios";
 
 // const BoardInfo = ({ history, coinSymbol }) => {
-  
+
 //   const dispatch = useDispatch();
 //   const [data, setData] = useState(null);
 //   const getData = async () => {
@@ -17,7 +17,7 @@
 //   };
 //   useEffect(() => {
 //     getData();
-    
+
 //   }, [coinSymbol]);
 
 //   useEffect(() => {
@@ -58,8 +58,9 @@ import BoardInput from './Section/Board/BoardInput';
 import Pagination from '@material-ui/lab/Pagination';
 import { useDispatch } from 'react-redux';
 // import { listCoin } from 'modules/actions/coininfo';
-import { listCoin } from 'modules/actions/board';
+// import { listCoin } from 'modules/actions/board';
 import styled from 'styled-components';
+import axios from 'axios';
 import withSelectedCoinName from '../../Container/withSelectedCoinName'
 
 
@@ -105,33 +106,30 @@ const PageNumber = styled.div`
 `;
 
 function BoardInfo({ history, coinSymbol }) {
-  const dispatch = useDispatch();
-  const userFrom = localStorage.getItem('userId');
-  const writerFrom = localStorage.getItem('userName');
-  const [content, setContent] = useState('data');
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    const getData = async () => {
+      const datas = await axios.get(`http://localhost:5000/api/coinname/${coinSymbol}`);
+      setData(datas.data);
+      console.log(data)
+    };
+    getData();
+    
+  }, [ coinSymbol ]);
 
   useEffect(() => {
-    FetchBoard();
-  }, [coinSymbol]);
+    console.log(data);
+  }, [data]);
 
-  const FetchBoard = () => {
-    const coinSym = coinSymbol
-    dispatch(listCoin(coinSym)).then(response => {
-      if (response.data) {
-        setContent(response.data)
-      } else {
-        alert('게시글을 불러올 수 없습니다.');
-      }
-      console.log('fetch: ', coinSymbol)
-    });
-  };
-  return (
-    <>
-      <p>data</p>
-      {content}
-    </>
-  );
-}
-
+  if (data === null) {
+    return <div>Load..</div>;
+  } else {
+    return (
+      <div>
+        {data}
+      </div>
+    );
+  }
+};
 export default withSelectedCoinName()(withRouter(BoardInfo));
 
