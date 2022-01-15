@@ -40,20 +40,18 @@ const loadJsSite = async (url) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);
-  if (page.$('.desc')) {
-    const desc = await page.$eval('.desc', el => el.innerText)
-    await browser.close();
-    return (desc)
-  }
-  else if (page.$('.description')) {
-    const desc = await page.$eval('.description', el => el.innerText)
-    await browser.close();
-    return (desc)
-  }
-  else {
-    console.log('no matching for selector')
-  }
-};
+  return (await page.evaluate(() => {
+    const desc = document.querySelector('.desc')
+    const description = document.querySelector('.description')
+    // check if exists
+    if (desc) {
+      return desc.innerText
+    } else {
+      return description.innerText
+    }
+    // await browser.close()
+  }))
+}
 
 // GET http://127.0.0.1:5000/api/coninfo/{coinName}
 app.get("/api/coininfo/:coinname", async (req, res) => {
