@@ -26,7 +26,7 @@ const St = {
     @media ${({ theme }) => theme.desktop} {
       display: block;
       max-width: 400px;
-      height: ${({ heightSize }) => `${heightSize}px`};
+      height: 603px;
       margin-left: 10px;
     }
 

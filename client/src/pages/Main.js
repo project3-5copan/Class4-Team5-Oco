@@ -8,7 +8,7 @@ import MainChart from "../components/Main/MainChart";
 import CoinList from "./CoinList";
 import MainDescription from '../assests/0oco01.png'
 import CoinBackground from '../assests/bcbc.jpeg';
-import DoziCoin from '../assests/dozicoin.jpeg'
+import ReCoin from '../assests/recoin.gif'
 
 
 const MainTop = styled.div`
@@ -16,7 +16,7 @@ const MainTop = styled.div`
 `;
 
 const MainImage = styled.img`
- width: 50vw;
+ width: 100%;
  height: 50vw;
  margin-left:auto;
  margin-right:auto;
@@ -72,7 +72,7 @@ const Main = () => {
   return (
     <>
       <MainTop>
-        <MainImage src={DoziCoin} />
+        <MainImage src={ReCoin} />
       </MainTop>
       
       <MainTitle>
