@@ -35,7 +35,7 @@ function Board({ match, coinNameKor }) {
       <AppUpbit />
       <St.nameDiv><h1>{coinNameKor} 정보</h1></St.nameDiv>
       {/* <Route path={`/coninfo/:coinname`} component={BoardInfo} /> */}
-      {/* <Route exact path={match.path} component={BoardInfo} /> */}
+      <Route exact path={match.path} component={BoardInfo} />
       <St.nameDiv><h1>{coinNameKor} 게시판</h1></St.nameDiv>
       <Route exact path={match.path} component={BoardView} />
       <Route exact path={`${match.path}/:boardId`} component={BoardDetail} />

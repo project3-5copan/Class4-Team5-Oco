@@ -46,11 +46,12 @@ const loadJsSite = async (url) => {
 };
 
 // GET http://127.0.0.1:5000/api/coninfo/{coinName}
-app.get("/api/coininfo:coinname", async (req, res) => {
+app.get("/api/coininfo/:coinname", async (req, res) => {
   let coinname = req.params.coinname
+  console.log(coinname)
   loadJsSite(`https://xangle.io/project/${coinname}/profile`)
     .then((data) => {
-      console.log(typeof (data))
+      // console.log(typeof (data))
       res.send(data)
     })
 });
