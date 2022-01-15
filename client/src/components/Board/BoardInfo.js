@@ -107,25 +107,24 @@ const PageNumber = styled.div`
 
 function BoardInfo({ history, coinSymbol }) {
   const [data, setData] = useState(null);
-  const [ coinName, setCoinName ] = useState('');
+  const [url, setURL] = useState('')
+  // const [coinName, setCoinName] = useState('');
   // setCoinName(coinSymbol)
+  console.log(coinSymbol)
   useEffect(() => {
-    setCoinName(coinSymbol)
-    const getData = async () => {
-      const datas = await axios.get(`http://localhost:5000/api/coininfo/${coinName}`);
-      setData(datas.data);
-      console.log(coinSymbol)
-    };
+    setURL(`http://localhost:5000/api/coininfo/${coinSymbol}`)
+  });
+  const getData = async () => {
+    const datas = await axios.get(url);
+    setData(datas.data);
+  };
+  useEffect(() => {
     getData();
-    
-  }, [ coinName ]);
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+    // console.log(data);
+  }, [ url ]);
 
   if (data === null) {
-    return <div>Loading {coinName} info..</div>;
+    return <div>Loading {coinSymbol} info..</div>;
   } else {
     return (
       <div>

@@ -41,8 +41,8 @@ const loadJsSite = async (url) => {
   const page = await browser.newPage();
   await page.goto(url);
   const desc = await page.$eval('.desc', el => el.innerText)
+  await browser.close();  
   return (desc)
-  await browser.close();
 };
 
 // GET http://127.0.0.1:5000/api/coninfo/{coinName}
