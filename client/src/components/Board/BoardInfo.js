@@ -64,10 +64,13 @@ import axios from 'axios';
 import withSelectedCoinName from '../../Container/withSelectedCoinName'
 
 
-const BoardBox = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  height: 100%;
+const InfoBox = styled.div`
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
+  margin-bottom: 10px;
+  font-size: 13px;
+  padding-left: 10px;
+  padding-top: 5px;
 `;
 
 const Alert = styled.p`
@@ -79,34 +82,9 @@ const Alert = styled.p`
   padding: 4px 0px;
 `;
 
-const BoardWriteForm = styled.form`
-  display: flex;
-  justify-content: center;
-`;
-
-const BoardButton = styled.button`
-  border-radius: 8px;
-  font-weight: 600;
-  width: 100%;
-  height: 30px;
-  padding-left: 30px;
-  letter-spacing: 20px;
-  text-align: center;
-  background-color: #1a83ff;
-  color: #fff;
-  &:active {
-    opacity: 0.7;
-  }
-`;
-
-const PageNumber = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-`;
-
 function BoardInfo({ history, coinSymbol }) {
   const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false)
   const [url, setURL] = useState('')
   // const [coinName, setCoinName] = useState('');
   // setCoinName(coinSymbol)
@@ -115,21 +93,25 @@ function BoardInfo({ history, coinSymbol }) {
     setURL(`http://localhost:5000/api/coininfo/${coinSymbol}`)
   });
   const getData = async () => {
+    setIsLoading(true)
     const datas = await axios.get(url);
     setData(datas.data);
+    setIsLoading(false)
   };
   useEffect(() => {
     getData();
     // console.log(data);
-  }, [ url ]);
+  }, [url]);
 
   if (data === null) {
     return <div>Loading {coinSymbol} info..</div>;
   } else {
     return (
-      <div>
-        {data}
-      </div>
+      <>
+        <InfoBox>
+          {isLoading ? (`${coinSymbol} 정보 loading중 입니다`) : data}
+        </InfoBox>
+      </>
     );
   }
 };

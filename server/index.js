@@ -46,8 +46,10 @@ const loadJsSite = async (url) => {
     // check if exists
     if (desc) {
       return desc.innerText
-    } else {
+    } else if (description) {
       return description.innerText
+    } else {
+      return 'no text found'
     }
     // await browser.close()
   }))
